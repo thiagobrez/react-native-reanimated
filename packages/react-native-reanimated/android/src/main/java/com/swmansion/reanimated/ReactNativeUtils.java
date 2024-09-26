@@ -39,6 +39,8 @@ public class ReactNativeUtils {
             drawable.getBorderRadius(
                 ReactViewBackgroundDrawable.BorderRadiusLocation.BOTTOM_RIGHT));
       }
+      return BorderRadiiDrawableUtils.getBorderRadii(view);
+      // TODO: Remove the rest once support for RN 0.75 is dropped.
     } else if (view instanceof ReactImageView) {
       try {
         if (mBorderRadiusField == null) {

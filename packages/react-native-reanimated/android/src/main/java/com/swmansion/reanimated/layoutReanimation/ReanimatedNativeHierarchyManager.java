@@ -208,7 +208,7 @@ class ReaLayoutAnimator extends LayoutAnimationController {
   }
 }
 
-public class ReanimatedNativeHierarchyManager extends NativeViewHierarchyManager {
+public class ReanimatedNativeHierarchyManager extends ReanimatedNativeHierarchyManagerBase {
   private final HashMap<Integer, ArrayList<View>> toBeRemoved = new HashMap<>();
   private final HashMap<Integer, Runnable> cleanerCallback = new HashMap<>();
   private final ReaLayoutAnimator mReaLayoutAnimator;
@@ -223,9 +223,11 @@ public class ReanimatedNativeHierarchyManager extends NativeViewHierarchyManager
     mReaLayoutAnimator = new ReaLayoutAnimator(reactContext, this);
     mTabNavigatorObserver = new TabNavigatorObserver(mReaLayoutAnimator);
 
-    Class<?> clazz = this.getClass().getSuperclass();
+    Class<?> clazz = this.getClass().getSuperclass().getSuperclass();
     if (clazz == null) {
-      Log.e("reanimated", "unable to resolve super class of ReanimatedNativeHierarchyManager");
+      Log.e(
+          "reanimated",
+          "unable to resolve NativeViewHierarchyManager class from ReanimatedNativeHierarchyManager");
       return;
     }
 
@@ -280,9 +282,9 @@ public class ReanimatedNativeHierarchyManager extends NativeViewHierarchyManager
     return !initOk || !mReaLayoutAnimator.isLayoutAnimationEnabled();
   }
 
-  public synchronized void updateLayout(
+  @Override
+  public synchronized void updateLayoutCommon(
       int parentTag, int tag, int x, int y, int width, int height) {
-    super.updateLayout(parentTag, tag, x, y, width, height);
     if (isLayoutAnimationDisabled()) {
       return;
     }

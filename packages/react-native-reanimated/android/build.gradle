@@ -316,8 +316,10 @@ android {
                 "**/libhermes.so",
                 "**/libhermes-executor-debug.so",
                 "**/libhermes_executor.so",
+                "**/libhermestooling.so",
                 "**/libreactnativejni.so",
                 "**/libturbomodulejsijni.so",
+                "**/libreactnative.so",
                 "**/libreact_nativemodule_core.so",
                 "**/libjscexecutor.so",
                 "**/libv8executor.so",
@@ -392,6 +394,21 @@ android {
                 }
             }
 
+            // BorderRadiiDrawableUtils
+            if (REACT_NATIVE_MINOR_VERSION <= 74) {
+                srcDirs += "src/reactNativeVersionPatch/BorderRadiiDrawableUtils/74"
+            } else if (REACT_NATIVE_MINOR_VERSION <= 75) {
+                srcDirs += "src/reactNativeVersionPatch/BorderRadiiDrawableUtils/75"
+            } else {
+                srcDirs += "src/reactNativeVersionPatch/BorderRadiiDrawableUtils/latest"
+            }
+
+            // ReanimatedNativeHierarchyManager
+            if (REACT_NATIVE_MINOR_VERSION <= 75) {
+                srcDirs += "src/reactNativeVersionPatch/ReanimatedNativeHierarchyManager/75"
+            } else {
+                srcDirs += "src/reactNativeVersionPatch/ReanimatedNativeHierarchyManager/latest"
+            }
         }
     }
 }
