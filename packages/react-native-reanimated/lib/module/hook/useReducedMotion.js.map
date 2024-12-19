@@ -1,0 +1,1 @@
+{"version":3,"names":["isReducedMotion","IS_REDUCED_MOTION","useReducedMotion"],"sourceRoot":"../../../src","sources":["hook/useReducedMotion.ts"],"mappings":"AAAA,YAAY;;AACZ,SAASA,eAAe,QAAQ,oBAAoB;AAEpD,MAAMC,iBAAiB,GAAGD,eAAe,CAAC,CAAC;;AAE3C;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,OAAO,SAASE,gBAAgBA,CAAA,EAAG;EACjC,OAAOD,iBAAiB;AAC1B","ignoreList":[]}

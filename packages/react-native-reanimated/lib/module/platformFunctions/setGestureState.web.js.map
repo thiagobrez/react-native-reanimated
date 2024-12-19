@@ -1,0 +1,1 @@
+{"version":3,"names":["setGestureState","console","warn"],"sourceRoot":"../../../src","sources":["platformFunctions/setGestureState.web.ts"],"mappings":"AAAA,YAAY;;AAEZ,OAAO,SAASA,eAAeA,CAAA,EAAG;EAChCC,OAAO,CAACC,IAAI,CAAC,yDAAyD,CAAC;AACzE","ignoreList":[]}

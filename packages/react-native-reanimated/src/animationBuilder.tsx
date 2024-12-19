@@ -58,6 +58,7 @@ function maybeReportOverwrittenProperties(
   style: NestedArray<StyleProps>,
   displayName: string
 ) {
+  // @ts-ignore aaa
   const commonProperties = getCommonProperties(layoutAnimationStyle, style);
 
   if (commonProperties.length > 0) {
